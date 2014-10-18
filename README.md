@@ -6,14 +6,16 @@ An iOS keyboard, that supports entering ip-values IPv4 and IPv6 to the UITextFie
 
   - copy the **library** files to the project
   - set it to the *UITextField's inputView* in *-viewDidLoad* (or where you find it most suitable)
-  - for IPv4: `aTextField.inputView = [[INNetAddressKeyboard alloc] initWithTextField:textModeServerAddress keyboardLayout:INNetAddressKeyboardIPv4];`
-    - for IPv6: `aTextField.inputView = [[INNetAddressKeyboard alloc] initWithTextField:textModeServerAddress keyboardLayout:INNetAddressKeyboardIPv6];`- 
+  - for IPv4: ''aTextField.inputView = [[INNetAddressKeyboard alloc] initWithTextField:textModeServerAddress keyboardLayout:INNetAddressKeyboardIPv4];''
+  - for IPv6: ''aTextField.inputView = [[INNetAddressKeyboard alloc] initWithTextField:textModeServerAddress keyboardLayout:INNetAddressKeyboardIPv6];''
   - make it better
   - enjoy!
 
 ## Screenshots
 
-
+|IPv6|IPv4|
+|---|---|
+|![IPv6](ipkeyboard-ipv6@2x.png)|![IPv4](ipkeyboard-ipv4@2x.png)|
 
 ## Thanks
 
