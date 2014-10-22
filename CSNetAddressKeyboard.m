@@ -1,16 +1,16 @@
 //
-//  INNetAddressKeyboard.m
+//  CSNetAddressKeyboard.m
 //
 //  Created by Jose Antonio Lopez on 18/10/14.
 //  Copyright (c) 2014 Insenia. All rights reserved.
 //
 
-#import "INNetAddressKeyboard.h"
+#import "CSNetAddressKeyboard.h"
 
-NSString *const INNetAddressKeyboardIPv4 = @"INNetAddressKeyboardIPv4";
-NSString *const INNetAddressKeyboardIPv6 = @"INNetAddressKeyboardIPv6";
+NSString *const CSNetAddressKeyboardIPv4 = @"CSNetAddressKeyboardIPv4";
+NSString *const CSNetAddressKeyboardIPv6 = @"CSNetAddressKeyboardIPv6";
 
-@interface INNetAddressKeyboard () {
+@interface CSNetAddressKeyboard () {
     __weak UITextField *_textField;
     NSString *_keyboardLayout;
     
@@ -39,9 +39,9 @@ NSString *const INNetAddressKeyboardIPv6 = @"INNetAddressKeyboardIPv6";
 
 @end
 
-@implementation INNetAddressKeyboard
+@implementation CSNetAddressKeyboard
 
-- (INNetAddressKeyboard *)initWithTextField:(UITextField *)textField keyboardLayout:(NSString*)keyboardLayout
+- (CSNetAddressKeyboard *)initWithTextField:(UITextField *)textField keyboardLayout:(NSString*)keyboardLayout
 {
     [self defineConstants];
     [self calcSizes:keyboardLayout];
@@ -84,7 +84,7 @@ NSString *const INNetAddressKeyboardIPv6 = @"INNetAddressKeyboardIPv6";
 
 - (void)calcSizes: (NSString*)keyboardLayout
 {
-    if (keyboardLayout != nil && [keyboardLayout respondsToSelector:@selector(length)] && [[keyboardLayout lowercaseString ]compare:[INNetAddressKeyboardIPv6 lowercaseString]] == NSOrderedSame)
+    if (keyboardLayout != nil && [keyboardLayout respondsToSelector:@selector(length)] && [[keyboardLayout lowercaseString ]compare:[CSNetAddressKeyboardIPv6 lowercaseString]] == NSOrderedSame)
     {
         if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
         {
@@ -130,7 +130,7 @@ NSString *const INNetAddressKeyboardIPv6 = @"INNetAddressKeyboardIPv6";
 - (void)makeButtonWithRect:(CGRect)rect num:(CGFloat)num grayBackground:(BOOL)grayBackground
 {
     UIButton *button = [[UIButton alloc] initWithFrame:rect];
-    CGFloat fontSize = 26.0f;
+    CGFloat fontSize = 25.0f;
     
     button.backgroundColor = (grayBackground) ? kBackgroundColor : [UIColor whiteColor];
     if (num != kNumberOfKeys)
@@ -251,7 +251,7 @@ NSString *const INNetAddressKeyboardIPv6 = @"INNetAddressKeyboardIPv6";
         if ([string length] == 0)
             return YES;
         
-        if (_keyboardLayout != nil && [_keyboardLayout respondsToSelector:@selector(length)] && [[_keyboardLayout lowercaseString ]compare:[INNetAddressKeyboardIPv6 lowercaseString]] == NSOrderedSame)
+        if (_keyboardLayout != nil && [_keyboardLayout respondsToSelector:@selector(length)] && [[_keyboardLayout lowercaseString ]compare:[CSNetAddressKeyboardIPv6 lowercaseString]] == NSOrderedSame)
         {
             NSString *includeString = @"ABCDEFabcdef0123456789:" ;
             if ([includeString rangeOfString:string].location == NSNotFound) {
