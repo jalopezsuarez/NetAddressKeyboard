@@ -212,8 +212,11 @@ NSString *const CSNetAddressKeyboardIPv6 = @"CSNetAddressKeyboardIPv6";
     
     if (button.tag == kNumberOfKeys)
     {
-        NSRange deleteRange = NSMakeRange((string.length - 1), 1);
-        [string deleteCharactersInRange:deleteRange];
+        if (string.length > 0)
+        {
+            NSRange deleteRange = NSMakeRange((string.length - 1), 1);
+            [string deleteCharactersInRange:deleteRange];
+        }
     }
     else
     {
